@@ -1,0 +1,13 @@
+# Libraries
+matplotlib
+numpy
+ipython
+ipykernel
+
+# Linting/Tooling
+pylint
+flake8
+mypy
+isort
+autopep8
+pre-commit

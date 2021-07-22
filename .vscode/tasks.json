@@ -1,0 +1,19 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {   // nur test.py
+            "label": "Run Python Main File",
+            "type": "shell",
+            "command": "python ${workspaceFolder}/test.py",
+            "group": "build",
+            "problemMatcher": []
+        },
+        {   // alle *.py
+            "label": "Run Active Python File",
+            "type": "shell",
+            "command": "python ${file}",
+            "group": "build",
+            "problemMatcher": []
+        }  
+    ]
+}

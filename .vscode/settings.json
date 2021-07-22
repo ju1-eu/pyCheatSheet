@@ -1,0 +1,61 @@
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 4,
+  "editor.rulers": [
+    80,
+    120
+  ],
+  "editor.renderWhitespace": "trailing",
+  "editor.suggestSelection": "first",
+  "terminal.integrated.defaultProfile.windows": "Command Prompt",
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "window.zoomLevel": 0,
+  "files.autoSave": "onFocusChange",
+  "files.associations": {
+    "*.pyx": "python"
+  },
+  "python.linting.enabled": true,
+  "python.linting.lintOnSave": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.mypyEnabled": true,
+  "python.formatting.provider": "autopep8",
+  "python.languageServer": "Pylance",
+  "python.showStartPage": false,
+  "autoDocstring.generateDocstringOnEnter": true,
+  "jupyter.alwaysTrustNotebooks": true,
+  "pythonTestExplorer.testFramework": "pytest",
+  "autoDocstring.quoteStyle": "'''",
+  "jupyter.interactiveWindowMode": "perFile",
+  "git.enableSmartCommit": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "[python]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "formatContextMenu.closeAfterSave": true,
+  "[cpp]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "C_Cpp_Runner.warnings": [
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic"
+  ],
+  "C_Cpp_Runner.compilerArgs": [],
+  "C_Cpp_Runner.includePaths": [],
+  "C_Cpp_Runner.linkerArgs": [],
+  "C_Cpp_Runner.cStandard": "",
+  "C_Cpp_Runner.cppStandard": "",
+  "C_Cpp_Runner.excludeSearch": [],
+  "C_Cpp_Runner.enableWarnings": true,
+  "C_Cpp_Runner.warningsAsError": false,
+  "C_Cpp_Runner.cCompilerPath": "/usr/bin/clang",
+  "C_Cpp_Runner.cppCompilerPath": "/usr/bin/clang++",
+  "C_Cpp_Runner.debuggerPath": "/usr/bin/lldb",
+  "C_Cpp_Runner.makePath": "/usr/bin/make"
+}
