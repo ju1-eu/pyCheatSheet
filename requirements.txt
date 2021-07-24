@@ -13,4 +13,4 @@ autopep8
 pre-commit
 
 # jupyter notebook
-pip install jupyter 
+jupyter 
