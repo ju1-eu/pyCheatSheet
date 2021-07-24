@@ -1,0 +1,107 @@
+\ProvidesPackage{osm-exam}
+
+\newcommand{\thetitle}{\Thema}
+
+\RequirePackage[a4paper,vmargin={25mm,20mm},hmargin={20mm,25mm}]{geometry}
+\RequirePackage{todonotes}          % definiert "\todo"
+\RequirePackage[utf8]{inputenc}     % Umlaute im Text
+\RequirePackage[ngerman]{babel}     % deutsch
+\RequirePackage{parskip}            % keine Absatzeinrückung
+\RequirePackage{tikz}               % Graphen malen
+\usetikzlibrary{patterns}           % Patterns in TikZ
+\RequirePackage{tabularx}           % Skalierbare Tabellen
+\RequirePackage{csquotes}           % definiert "\enquote"
+\RequirePackage{lastpage}           % Pagecounter
+\RequirePackage{slashbox}           % Seitenersetzungstabelle Frame/Page Trennstrich
+\RequirePackage{multicol}           % Mehrspaltiger Text
+\RequirePackage{refcount}           % Magie mit Seitennummern
+\RequirePackage{listings}
+\RequirePackage[stretch=9,shrink=15,step=3,tracking=smallcaps,letterspace=75,final,babel=true]{microtype}
+\RequirePackage[sc]{mathpazo}
+\RequirePackage[scale=.9,semibold]{sourcecodepro}
+\RequirePackage{sourcesanspro}
+\RequirePackage{xcolor}
+
+
+% dicke Linien in Tabellen mit dem neuen \hlinewd Kommando
+\makeatletter
+\def\hlinewd#1{%
+  \noalign{\ifnum0=`}\fi\hrule \@height #1 %
+  \futurelet\reserved@a\@xhline}
+\makeatother
+
+
+% TikZ-Pattern zum Ausfüllen mit Punkten (https://gist.github.com/duetosymmetry/e3ee991065be6e35e02ecf2fcc3d9fad)
+\def\squaresize{3mm}
+\def\dotsize{.2pt}
+\pgfdeclarepatternformonly
+  {dotgrid}% name
+  {\pgfpoint{-0.5*\squaresize}{-0.5*\squaresize}}% lower left
+  {\pgfpoint{0.5*\squaresize}{0.5*\squaresize}}%  upper right
+  {\pgfpoint{\squaresize}{\squaresize}}%  tile size
+  {% shape description
+    \pgfpathcircle{\pgfqpoint{0pt}{0pt}}{\dotsize}
+    \pgfusepath{fill}
+  }
+% mit Punkten gefüllte leere Box (statt komplett leerer \makeemptybox{})
+\newcommand\makeemptydotbox[1]{%
+  \par\noindent
+  \tikz[overlay,remember picture]\coordinate (box_start);
+  \par
+  \vspace{#1}
+  \null\hfill
+  \tikz [overlay,remember picture] \draw [pattern=dotgrid] (0,0) rectangle ([yshift=\ht\strutbox-\fboxsep]box_start);
+}
+\renewcommand\makeemptybox[1]{\makeemptydotbox{#1}}
+
+
+% Anfang der Zeichenfolge mit Nullen auffüllen
+\newcommand\zeropad[2]{%
+  \ifnum#2<0\relax%
+    {\ensuremath-}\zeropadA{#1}{\the\numexpr#2*-1\relax}%
+  \else%
+    \zeropadA{#1}{#2}%
+  \fi%
+}
+\def\zeropadA#1#2{%
+  \ifnum1#2<1#1
+    \zeropadA{#1}{0#2}%
+  \else%
+    #2%
+  \fi%
+}
+
+
+% Optik
+\header % Kopfzeile
+  {\small\sffamily \ifdefined\GitCommitHash{{\GitCommitHash}-}\fi \ifdefined\LfdNr{\textbf{\zeropad{00}{\LfdNr}}}\fi}
+  {} %
+  {{\thetitle}}
+\headrule % Linie unter der Kopfzeile
+\footer % Fußzeile
+  {}
+  {Seite {\thepage} von {\pageref{LastPage}}}
+  {\small\sffamily \ifdefined\GitCommitHash{{\GitCommitHash}-}\fi \ifdefined\LfdNr{\textbf{\zeropad{00}{\LfdNr}}}\fi}
+\pointsinrightmargin % der Name sagt alles
+\shadedsolutions % der auch
+
+% Listings
+\lstset{basicstyle=\ttfamily}
+
+% Texte aus der Vorlage eindeutschen
+\renewcommand{\solutiontitle}{\noindent\textbf{Lösung:}\par\noindent}
+\pointpoints{Punkt}{Punkte}
+\qformat{\textbf{\sffamily{Aufgabe \thequestion}} --- \thequestiontitle \dotfill \thepoints}
+\totalformat{\totalpoints~Punkte}
+\bonuspointpoints{Zusatzpunkt}{Zusatzpunkte}
+\bonusqformat{\textbf{\sffamily{Zusatzaufgabe}} \vrule depth 1em width 0pt \dotfill \thepoints }
+\bonustotalformat{\totalpoints~Bonuspunkte}
+\hqword{Aufgabe}
+\hpword{Punkte}
+\hsword{Erreicht}
+
+% combined gradtable
+\chqword{Aufgabe}
+\chpword{Punkte}
+\chsword{Erreicht}
+\chbpword{Zusatzpunkte}

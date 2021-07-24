@@ -39,22 +39,25 @@ ssh -ljan 192.168.1."???"
 # Anaconda installieren
 conda activate base
 # environment
-conda create -n pyAnfaenger python=3.8
-conda activate pyAnfaenger
+conda create -n pyCheatSheet python=3.8
+conda activate pyCheatSheet
 conda deactivate
 
 # rpi4: 
 # MINICONDA  (https://programmerwiki.com/article/56621119030/)
 # Python3.8 (https://maker-tutorials.com/python3-pip-raspberry-pi-installieren/)
-source activate pyAnfaenger
+source activate pyCheatSheet
 
 pip install -r requirements.txt
 # wenn Problem mit export in *.ipynb
 pip uninstall nbconvert
 pip install nbconvert -U
 
-## VScode und Extension installieren
+# VScode und Extension installieren
 franneck94
+
+# Terminal
+# jupyter notebook
 ```
 
 ## Problem-Lösungem

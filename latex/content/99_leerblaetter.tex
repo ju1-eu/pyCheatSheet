@@ -1,0 +1,17 @@
+\ifprintanswers\else
+
+    % Leerseite(n)
+
+    \newcommand{\emptypage}{
+        \clearpage\null
+        \uplevel{\textbf{\sffamily{Zusatzblatt (Seite~\thepage)}}}
+
+
+        \makeemptybox{\stretch{1}}
+    }
+
+    \emptypage
+    \emptypage
+    \ifodd\thepage\emptypage\fi % (gerade Anzahl an Gesamtseiten garantieren)
+
+\fi

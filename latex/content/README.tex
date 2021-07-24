@@ -1,0 +1,378 @@
+\chapter{Readme}\label{readme}
+
+Erstellt Webseiten \& Latex-Files mit Markdown und Pandoc. Projekt wurde
+getestet unter >>iMac<<
+
+\section{Kurzbefehle}\label{kurzbefehle}
+
+\textbf{Terminal} öffnen
+
+\lstset{language=Bash}% C, TeX, Bash, Python 
+\begin{lstlisting}[
+	%caption={}, label={code:}%% anpassen
+]
+# Schreiben in Markdown, Illustrator für Vektorgrafiken und Excel für Tabellen
+
+./projekt.sh  # Schritt 2, 3, 5
+##########################################################
+    0) Projekt aufräumen
+    1) Projekt erstellen
+    2) Markdown in (tex, html5) + sed (Suchen/Ersetzen)
+    3) Kapitel erstellen + Scripte ausführen
+    4) Fotos optimieren (Web, Latex)
+    5) www + index.html
+    6) git init
+    7) git status + git log
+    8) Git-Version erstellen
+    9) Backup + Archiv erstellen
+##########################################################
+
+# PDF erstellen
+make distclean
+make
+make clean
+
+# Git Version
+git add .
+git commit -a
+git push
+
+# Backup
+./projekt.sh  # Schritt 9
+\end{lstlisting}
+
+\section{Software}\label{software}
+
+\begin{itemize}
+\item
+  Git Bash\footnote{\url{https://git-scm.com/downloads}}
+\item
+  Git-Repository klonen\footnote{\url{https://github.com/ju1-eu/Notizen-TeX-Web-iMac.git}}
+\item
+  Texlive (Latex)\footnote{\url{https://www.tug.org/texlive/}}
+\item
+  Pandoc (Dokumentenkonverter)\footnote{\url{https://pandoc.org/installing.html}}
+\item
+  Imagemagick (Bildbearbeitung)\footnote{\url{https://imagemagick.org/script/download.php}}
+\item
+  Editor Visual Studio Code\footnote{\url{https://code.visualstudio.com/}}
+\item
+  Editor Atom\footnote{\url{https://atom.io/}}
+\item
+  Editor Notepad++\footnote{\url{https://notepad-plus-plus.org/downloads/}}
+\item
+  TeXstudio (Latexeditor)\footnote{\url{https://www.texstudio.org/}}
+\item
+  Tablesgenerator (Latex / Markdown)\footnote{\url{https://www.tablesgenerator.com/latex_tables}}
+\item
+  hpi-dokumentvorlagen-latex (Hasso-Plattner-Institut (HPI)
+  Potsdam)\footnote{\url{https://osm.hpi.de/theses/tipps\#dokumentvorlagen-latex}}
+\item
+  Zotero (Literaturverwaltung)\footnote{\url{http://www.zotero.org/}}
+\item
+  WordPress\footnote{\url{https://de.wordpress.org/download/}}
+\item
+  XAMPP Apache + Maria DB + PHP\footnote{\url{https://www.apachefriends.org/de/index.html}}
+\item
+  FileZilla\footnote{\url{https://filezilla-project.org/}}
+\item
+  VM VirtualBox\footnote{\url{https://www.virtualbox.org/}}
+\item
+  Ubuntu (Desktop / Server)\footnote{\url{https://ubuntu.com/download}}
+\item
+  WordPress-Themes\footnote{\url{https://de.wordpress.org/themes/}}
+\item
+  themecheck (WordPress-Themes)\footnote{\url{https://themecheck.info/}}
+\item
+  ghostscript Z.~B. EPS in PDF\footnote{\url{https://www.ghostscript.com/}}
+\end{itemize}
+
+\section{Erste Schritte}\label{erste-schritte}
+
+\textbf{Files anpassen:}
+
+\begin{enumerate}
+\item
+  \verb|scripteBash/sed.sh|
+
+  \begin{itemize}
+  \item
+    codelanguage:
+    \verb|HTML5, Python, Bash, C, C++, TeX|
+  \item
+    CMS Server Pfad: \verb|https://bw-ju.de/\#|
+  \item
+    Bildformat: SVG, PNG, JPG, WebP
+  \end{itemize}
+\item
+  \verb|scripteBash/gitversionieren.sh|
+
+  \begin{itemize}
+  \item
+    >>/Volumes/usb-daten/meineNotizen/repository/notizen-iMac<<
+  \end{itemize}
+\item
+  \verb|projekt.sh|
+
+  \begin{itemize}
+  \item
+    THEMA=>>Notizen-TeX-Web-iMac<<
+  \item
+    >>/Volumes/usb-daten/meineNotizen/backup/notizen-iMac<<
+  \item
+    >>/Volumes/usb-daten/meineNotizen/archiv/notizen-iMac<<
+  \end{itemize}
+\item
+  \verb|content/metadata.tex|
+
+  \begin{itemize}
+  \item
+    Datum, Titel, Autor
+  \end{itemize}
+\item
+  \verb|content/titelpage.tex|
+
+  \begin{itemize}
+  \item
+    >>Grafiken/logo.eps<<
+  \end{itemize}
+\end{enumerate}
+
+\textbf{Markdown-Files erstellen}
+
+\begin{enumerate}
+\item
+  Erstelle eine Datei >>neu.md<< im Ordner >>md/<<
+
+  \begin{itemize}
+  \item
+    Bilder nach \verb|images/| kopieren
+  \item
+    Vektorgrafiken nach \verb|Grafiken/| kopieren
+  \end{itemize}
+\item
+  Script ausführen: \verb|projekt.sh|
+\end{enumerate}
+
+\textbf{Terminal} öffnen
+
+\lstset{language=Bash}% C, TeX, Bash, Python 
+\begin{lstlisting}[
+	%caption={}, label={code:}%% anpassen
+]
+$ ./projekt.sh
+
+  0) Projekt aufräumen
+  1) Projekt erstellen
+  2) Markdown in (tex, html5) + sed (Suchen/Ersetzen)
+  3) Kapitel erstellen + Scripte ausführen
+  4) Fotos optimieren (Web, Latex)
+  5) www + index.html
+  6) git init
+  7) git status + git log
+  8) Git-Version erstellen
+  9) Backup + Archiv erstellen
+ 10) Beenden?
+
+ Eingabe Zahl >_
+\end{lstlisting}
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item
+  Latex-PDFs erstellen: \verb|make|
+\end{enumerate}
+
+\lstset{language=Bash}% C, TeX, Bash, Python 
+\begin{lstlisting}[
+	%caption={}, label={code:}%% anpassen
+]
+$ make
+$ make clean
+$ make distclean
+\end{lstlisting}
+
+\begin{enumerate}
+\setcounter{enumi}{3}
+\item
+  Repository auf Github erstellen
+\end{enumerate}
+
+\section{Git-Repository erstellen --
+klonen}\label{git-repository-erstellen-klonen}
+
+GitHub's Maximum File size of \textbf{50 MB}
+
+\textbf{Repository auf Github erstellen}
+
+\lstset{language=Bash}% C, TeX, Bash, Python 
+\begin{lstlisting}[
+	%caption={}, label={code:}%% anpassen
+]
+# HTTPS oder SSH
+HTTPS: https://github.com/ju1-eu/Notizen-TeX-Web-iMac.git
+SSH: git@github.com:ju1-eu/Notizen-TeX-Web-iMac.git
+
+# create a new repository 
+echo "# README" >> README.md
+# iMac Warnung 
+# git config --global init.defaultBranch master
+git init
+git add .
+git commit -m "git init"
+                
+# or push an existing repository 
+git remote add origin https://github.com/ju1-eu/Notizen-TeX-Web-iMac.git
+git push -u origin master
+\end{lstlisting}
+
+\textbf{Git-Repository klonen}
+
+\lstset{language=Bash}% C, TeX, Bash, Python 
+\begin{lstlisting}[
+	%caption={}, label={code:}%% anpassen
+]
+git clone https://github.com/ju1-eu/Notizen-TeX-Web-iMac.git
+\end{lstlisting}
+
+\section{Script Beschreibung}\label{script-beschreibung}
+
+\verb|$ ./projekt.sh|
+
+\begin{enumerate}
+\item
+  Projekt erstellen
+
+  \begin{itemize}
+  \item
+    Verzeichnis erstellen, wenn nicht vorhanden
+  \end{itemize}
+\item
+  Markdown in \verb|*.tex und *.html|
+
+  \begin{itemize}
+  \item
+    Markdown in Latex + HTML5 + WordPress
+  \item
+    sed > WordPress
+  \item
+    sed > Latex
+  \end{itemize}
+\item
+  Kapitel erstellen + Scripte ausführen
+
+  \begin{itemize}
+  \item
+    Alle Abbildungen >>images/<< in Markdown speichern.
+
+    \begin{itemize}
+    \item
+      >>archiv/input-img.txt<<
+    \end{itemize}
+  \item
+    Latex Kapitel erstellen.
+
+    \begin{itemize}
+    \item
+      Kopiere >>tex-pandoc/.tex<< nach >>tex/<<
+    \item
+      >>tex/<< \textbf{Handarbeit\ldots{}} für optimale Ergebnisse!
+    \item
+      Kopiere >>archiv/inhalt.tex<< nach >>content/<<
+    \item
+      make -- Latex-PDF erstellen
+    \end{itemize}
+  \item
+    Tabellen als PDFs in Latex einfügen. >>Tabellen/ ?<<
+  \item
+    Inhalt vom Projektverzeichnis.
+
+    \begin{itemize}
+    \item
+      >>archiv/Projekt-Inhalt.txt<<
+    \end{itemize}
+  \item
+    Quellcode >>code/<< in Latex speichern.
+
+    \begin{itemize}
+    \item
+      >>archiv/Quellcode-files.tex<< HTML, Python, Bash, C, C++, TeX
+    \end{itemize}
+  \item
+    Artikel aus den Ordnern erstellen
+
+    \begin{itemize}
+    \item
+      >>tex/<<
+    \item
+      >>archiv/<<
+    \item
+      >>Tabellen/<<
+    \item
+      >>content/beispiele/tex/<<
+    \item
+      wird gespeichert in >>Artikel/<<
+    \end{itemize}
+  \item
+    Alle Abbildungen >>images/<< in Latex speichern
+
+    \begin{itemize}
+    \item
+      >>archiv/Pics-files.tex<<
+    \item
+      Bildgröße: \verb|width=.80\\textwidth|
+    \end{itemize}
+  \end{itemize}
+\end{enumerate}
+
+\begin{enumerate}
+\setcounter{enumi}{3}
+\item
+  Fotos optimieren (Web, Latex)
+\item
+  www + index.html
+
+  \begin{itemize}
+  \item
+    >>html/alle-pics.html<< erstellen
+  \item
+    >>index.html<< erstellen
+  \end{itemize}
+\item
+  \verb|git init|
+\item
+  \verb|git status| +
+  \verb|git log|
+\item
+  Git-Version erstellen
+
+  \begin{itemize}
+  \item
+    \textbf{Pfade} anpassen in
+    \verb|gitversionieren.sh|
+  \item
+    lokales Repository: master
+  \item
+    Github Repository: origin/master
+  \item
+    Sicherung Repository: backupUSB/master
+
+    \begin{itemize}
+    \item
+      >>/Volumes/usb-daten/meineNotizen/repository/notizen-iMac<<
+    \end{itemize}
+  \end{itemize}
+\item
+  Sicherung + Archiv erstellen
+
+  \begin{itemize}
+  \item
+    \textbf{Pfade} anpassen in \verb|projekt.sh|
+  \item
+    THEMA=>>Notizen-TeX-Web-iMac<<
+  \item
+    >>/Volumes/usb-daten/meineNotizen/backup/notizen-iMac<<
+  \item
+    >>/Volumes/usb-daten/meineNotizen/archiv/notizen-iMac<<
+  \end{itemize}
+\end{enumerate}

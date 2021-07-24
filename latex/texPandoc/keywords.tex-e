@@ -1,0 +1,144 @@
+%ju 22-Jul-21 keywords.tex
+\chapter{boolean true false}\label{boolean-true-false}
+
+\lstset{language=Python}% C, TeX, Bash, Python 
+\begin{lstlisting}[
+	%caption={}, label={code:}%% anpassen
+][language=Python]
+# boolean true, false
+log_var1 = True == (1 > 2) # False
+log_var2 = True == (2 > 1) # True
+\end{lstlisting}
+
+\section{and or not}\label{and-or-not}
+
+\lstset{language=Python}% C, TeX, Bash, Python 
+\begin{lstlisting}[
+	%caption={}, label={code:}%% anpassen
+][language=Python]
+# and, or, not
+log_var3 = True and True # True
+log_var4 = True or False # True
+log_var5 = not False # True
+\end{lstlisting}
+
+\section{break continue}\label{break-continue}
+
+\lstset{language=Python}% C, TeX, Bash, Python 
+\begin{lstlisting}[
+	%caption={}, label={code:}%% anpassen
+][language=Python]
+# break, continue
+while True:
+    break    # ende
+    continue # abbruch
+\end{lstlisting}
+
+\section{class}\label{class}
+
+\lstset{language=Python}% C, TeX, Bash, Python 
+\begin{lstlisting}[
+	%caption={}, label={code:}%% anpassen
+][language=Python]
+# class
+#class Coffee:
+    # Define your class
+\end{lstlisting}
+
+\section{funktion}\label{funktion}
+
+\lstset{language=Python}% C, TeX, Bash, Python 
+\begin{lstlisting}[
+	%caption={}, label={code:}%% anpassen
+][language=Python]
+def say_hi():
+    print("hi")
+
+
+say_hi()
+\end{lstlisting}
+
+\section{if elif else}\label{if-elif-else}
+
+\lstset{language=Python}% C, TeX, Bash, Python 
+\begin{lstlisting}[
+	%caption={}, label={code:}%% anpassen
+][language=Python]
+x = int(input("Eingabe Zahl: "))
+if x > 3: print("Big")
+elif x == 3: print("3")
+else: print("Small")
+\end{lstlisting}
+
+\section{for while}\label{for-while}
+
+\lstset{language=Python}% C, TeX, Bash, Python 
+\begin{lstlisting}[
+	%caption={}, label={code:}%% anpassen
+][language=Python]
+# For 
+for i in [0,1,2]:
+    print(i)
+
+# While 
+j = 0
+while j < 3:
+    print(j); j = j + 1
+\end{lstlisting}
+
+\section{in}\label{in}
+
+\lstset{language=Python}% C, TeX, Bash, Python 
+\begin{lstlisting}[
+	%caption={}, label={code:}%% anpassen
+][language=Python]
+# in
+liste = [2, 39, 42]
+log_var6 = 42 in liste # True
+log_var6
+\end{lstlisting}
+
+\section{is}\label{is}
+
+\lstset{language=Python}% C, TeX, Bash, Python 
+\begin{lstlisting}[
+	%caption={}, label={code:}%% anpassen
+][language=Python]
+# is
+y = x = 3
+log_var7 = x is y # True
+\end{lstlisting}
+
+\section{None}\label{none}
+
+\lstset{language=Python}% C, TeX, Bash, Python 
+\begin{lstlisting}[
+	%caption={}, label={code:}%% anpassen
+][language=Python]
+# None
+print() is None # True
+\end{lstlisting}
+
+\section{lambda}\label{lambda}
+
+\lstset{language=Python}% C, TeX, Bash, Python 
+\begin{lstlisting}[
+	%caption={}, label={code:}%% anpassen
+][language=Python]
+# lambda
+(lambda x: x+3)(2) # 5
+\end{lstlisting}
+
+\section{return}\label{return}
+
+\lstset{language=Python}% C, TeX, Bash, Python 
+\begin{lstlisting}[
+	%caption={}, label={code:}%% anpassen
+][language=Python]
+# return
+def increment(x):
+    return x + 1
+
+    
+increment(4) # returns 5
+\end{lstlisting}

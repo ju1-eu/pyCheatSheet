@@ -1,0 +1,99 @@
+\documentclass[11pt,paper=a4,fleqn,parskip=half% ohne Absatzeinzug
+]{scrartcl}   
+\include{content/praeambel-artikel}    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Eingabe
+% Seitenlayout
+\usepackage[left=2.0cm,right=2.0cm,top=2.0cm,bottom=2.0cm,includeheadfoot]{geometry}
+\setlength{\footheight}{28.45268pt}
+\setlength{\headheight}{33.16006pt}
+
+
+
+% Kopfzeile
+\ihead{\copyright \enspace $\the\year$ \autor\\ \small{\textbf{Quelle:} \quelle} \vspace{0.4em}}
+\chead{}%leer lassen
+% mit Logo & QR-Code????
+\ohead{\includegraphics[width=1.0cm]{images/logo.eps}}% Logo
+\ifoot{\qrcode[hyperlink,level=Q,version=2,height=1.0cm]{\website}}% QR-Code
+
+% anpassen
+% Quelle Literaturverzeichnis oder URL in Fussnote 
+\newcommand{\quelle}{Jan Schaffranek franneck94~\footnote{\url{https://github.com/franneck94}}}
+%\newcommand{\quelle}{MathePeter siehe~\textcite{peter:2021:mathe}}% Literaturverzeichnis
+\newcommand{\titel}{Python Notizen}
+\newcommand{\autor}{Jan Unger}
+\newcommand{\datum}{\today}
+\newcommand{\datumHand}{09.07.2021}% ##.##.####
+\newcommand{\website}{http://bw-ju.de}
+\newcommand{\websiteKurz}{bw-ju.de}
+
+
+
+% Literatur
+\bibliography{content/literatur}
+\bibliography{content/literatur-kfz}
+\bibliography{content/literatur-sport}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \LaTeX
+% \begin{enumerate}[label=(\alph*)]% (a)
+% \begin{itemize}[label=\checkmark]% check
+% \begin{enumerate}[label={\protect\ding{\value*}},start=192]% (1)
+% \textbf{fetter Text}
+% \textsc{Kapitaelchen}
+% \emph{kursiv}
+% \enspace % Abstand oder \quad
+% \huge{großer Text}
+% \tiny{kleiner Text}
+% \textcolor{rot5}{farbiger Text \LaTeX}
+
+%\title{\titel}
+%\date{\datum}
+%\author{\autor}
+
+\begin{document}
+
+    %\maketitle
+    % oder
+    \begin{center}
+        \textbf{\Large \titel}\\%14pt
+        \vspace{0.4em}
+        \datum
+        %\datumHand
+    \end{center}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Zusammenfassung anpassen
+    \begin{abstract} 
+    \begin{quote}
+        \textcolor{rot5}{>>Die Mathematik ist die Sprache der Natur, 
+        ihre Buchstaben sind Dreiecke, Kreise und andere Figuren.<<}\\ 
+        \raggedleft \small{-- Galileo Galilei}% 10pt
+    \end{quote}
+    \end{abstract}
+
+    % Check anpassen
+    \begin{itemize}[label=\checkmark] \itemsep -2pt
+        \item keywords
+    \end{itemize}
+
+    % Textteil anpassen
+
+    %Fußnote~\footnote{Text der Fußnote.} 
+
+    %\textbf{Quelle:} \quelle
+
+    %Meine Website~\footnote{\url{\website}}
+
+
+    \input{content/keywords}
+    \includepdf[pages=-]{Tabellen/PDF/Vektor-und-Matrix.pdf}     
+    %\include{content/Neu} % neu
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Bibliographie
+    \printbibliography
+
+\end{document}

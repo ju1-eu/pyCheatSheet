@@ -1,7 +1,7 @@
 .mypy_cache
 .pytest_cache
+__latexindent_temp.tex
 !.vscode
-.vscode/c_cpp_properties.json
 .DS_Store
 build
 export

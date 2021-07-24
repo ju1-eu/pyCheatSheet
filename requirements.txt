@@ -11,3 +11,6 @@ mypy
 isort
 autopep8
 pre-commit
+
+# jupyter notebook
+pip install jupyter 
